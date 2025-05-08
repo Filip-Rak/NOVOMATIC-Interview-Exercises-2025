@@ -4,6 +4,7 @@
 /CMakeCache.txt
 
 # Visual Studio files
+CMakeSettings.json
 *.vcxproj*
 *.sln
 *.user
