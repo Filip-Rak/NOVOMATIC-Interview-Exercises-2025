@@ -1,0 +1,20 @@
+# Build directories
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+
+# Visual Studio files
+*.vcxproj*
+*.sln
+*.user
+*.suo
+*.vcxproj.filters
+*.vs
+
+# Compiled object files
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
