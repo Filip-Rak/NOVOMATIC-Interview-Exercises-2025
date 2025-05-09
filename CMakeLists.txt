@@ -6,10 +6,17 @@ project(NOVOMATIC_Interview-Exercises-2025 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-enable_testing()
+set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/external)	# Keep builds and downloads inside build/
 
-add_library(catch2_amalgamated OBJECT external/catch2/catch_amalgamated.cpp)
-target_include_directories(catch2_amalgamated INTERFACE external/catch2)
+include(FetchContent)
+FetchContent_Declare(
+  catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG v3.8.1
+)
+FetchContent_MakeAvailable(catch2)
+
+enable_testing()
 
 add_subdirectory(exercises/exercise1)
 # add_subdirectory(exercises/exercise2)
