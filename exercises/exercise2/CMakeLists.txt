@@ -1,6 +1,6 @@
 # Exercise 2 - CMakeLists.txt
 
-# Fetch SFML
+# SFML Dependency
 include(FetchContent)
 
 FetchContent_Declare(
@@ -11,11 +11,20 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(SFML)
 
-# Main executable
-add_executable(ex2_main main.cpp triangle.cpp visualization.cpp)
+# Main Executable
+add_executable(ex2_main 
+	src/main.cpp
+	src/triangle.cpp
+	src/visualization.cpp
+)	
+target_include_directories(ex2_main PRIVATE include)
 target_link_libraries(ex2_main PRIVATE sfml-graphics sfml-window sfml-system)
 
-# Test executable
-add_executable(ex2_tests test_collision.cpp triangle.cpp)
+# Unit Tests
+add_executable(ex2_tests 
+	tests/test_collision.cpp 
+	src/triangle.cpp
+)
+target_include_directories(ex2_tests PRIVATE include)
 target_link_libraries(ex2_tests PRIVATE Catch2::Catch2WithMain)
 add_test(NAME Exercise2_CollisionTests COMMAND ex2_tests)
