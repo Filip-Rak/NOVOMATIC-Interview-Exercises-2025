@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <string>
 #include <memory>
+#include <stack>
 
 class Trie
 {
@@ -27,5 +28,5 @@ public:
 
 	/* Public Methods */
 	void add_query(const std::string& query);
-	std::vector<std::string> get_prefixes(const std::string& query) const;
+	std::vector<std::string> get_prefixes(const std::string& prefix) const;
 };

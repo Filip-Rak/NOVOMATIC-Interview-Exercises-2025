@@ -8,7 +8,7 @@ Trie::Trie()
 
 void Trie::add_query(const std::string& query)
 {
-	// Add each character while advancing through nodes.
+	// Process each character while advancing through nodes.
 	Node* tgt = root.get();
 	for (char c : query)
 	{
@@ -22,7 +22,37 @@ void Trie::add_query(const std::string& query)
 	tgt->full_query = query;
 }
 
-std::vector<std::string> Trie::get_prefixes(const std::string& query) const
+std::vector<std::string> Trie::get_prefixes(const std::string& prefix) const
 {
-	
+	// Get to the end of the prefix.
+	Node* tgt = root.get();
+	for (char c : prefix)
+	{
+		auto it = tgt->children.find(c);
+		if (it != tgt->children.end())
+			tgt = it->second.get();
+		else
+			return {};
+	}
+
+	// Using DFS gather all terminal nodes starting from the prefix's end.
+	std::vector<std::string> results;
+	std::stack<const Node*> stack;
+	stack.push(tgt);
+
+	while (!stack.empty())
+	{
+		const Node* current = stack.top();
+		stack.pop();
+
+		// Add terminal's node querry.
+		if (current->terminal)
+			results.push_back(current->full_query);
+
+		// Add all of these nodes's children to stack.
+		for (auto& [_, next_node] : current->children)
+			stack.push(next_node.get());
+	}
+
+	return results;
 }
