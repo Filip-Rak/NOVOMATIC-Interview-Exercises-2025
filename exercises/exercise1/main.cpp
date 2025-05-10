@@ -6,8 +6,8 @@
 void handle_input(const std::string& line, Trie& trie)
 {
 	// Define commands.
-	const std::string ADD_COMMAND = "add: ";
-	const std::string QUERY_COMMAND = "ask: ";
+	const std::string ADD_COMMAND = "add:";
+	const std::string QUERY_COMMAND = "ask:";
 
 	if (line.starts_with(ADD_COMMAND))
 	{

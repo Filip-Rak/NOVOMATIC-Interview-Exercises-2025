@@ -20,7 +20,7 @@ FetchContent_MakeAvailable(catch2)
 enable_testing()
 
 add_subdirectory(exercises/exercise1)
-# add_subdirectory(exercises/exercise2)
+add_subdirectory(exercises/exercise2)
 # add_subdirectory(exercises/exercise3)
 
 message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
