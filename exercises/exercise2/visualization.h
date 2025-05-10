@@ -9,7 +9,11 @@
 class Visualization
 {
 	/* Attributes */
+
+	// Window & timing
 	sf::RenderWindow window;
+	sf::Clock delta_clock;
+	float delta_time = 0.f;
 
 	// Triangles & Shapes
 	triangle wasd_triangle = { {{
@@ -33,7 +37,7 @@ class Visualization
 	const sf::Color COLLISION_COLOR = sf::Color(231, 76, 60);
 	const sf::Color CLEAR_COLOR = sf::Color::Black;
 
-	// Key bindings
+	// Constnats: Controls
 	const std::vector<sf::Keyboard::Key> wasd_controls = {
 		sf::Keyboard::W,		// UP
 		sf::Keyboard::S,		// DOWN
@@ -50,22 +54,9 @@ class Visualization
 		sf::Keyboard::LControl	// SPEED BOOST
 	};
 
-	sf::Clock delta_clock;
-	float delta_time = 0.f;
+	// Speed
 	float triangle_normal_speed = 100.f;
 	float triangle_fast_speed = 250.f;
-
-	/* Private Methods */
-	void process_events();
-	void update();
-	void handle_movement(triangle& triangle, sf::ConvexShape& shape, const std::vector<sf::Keyboard::Key>& controls);
-	vec2 get_movement_vector(const std::vector<sf::Keyboard::Key> constrols);
-	bool will_fit_on_screen(const triangle& tri, const vec2& offset);
-	void sync_shape_with_triangle(sf::ConvexShape& shape, triangle& tri);
-	void update_fill_colors();
-	void render();
-
-	sf::ConvexShape make_triangle_shape(const triangle& triangle, sf::Color color) const;
 
 public:
 	/* Constructor */
@@ -73,4 +64,22 @@ public:
 
 	/* Public Methods */
 	void run();
+
+private:
+	/* Private Methods */
+
+	// Processing
+	void process_events();
+	void update();
+	void render();
+
+	// Movement
+	void handle_movement(triangle& triangle, sf::ConvexShape& shape, const std::vector<sf::Keyboard::Key>& controls);
+	vec2 get_movement_vector(const std::vector<sf::Keyboard::Key> controls);
+	bool will_fit_on_screen(const triangle& tri, const vec2& offset);
+	void sync_shape_with_triangle(sf::ConvexShape& shape, triangle& tri);
+	void update_fill_colors();
+	
+	// Utility
+	sf::ConvexShape make_triangle_shape(const triangle& triangle, sf::Color color) const;
 };

@@ -1,5 +1,29 @@
 #include "visualization.h"
 
+Visualization::Visualization(int window_width, int window_height)
+	: window(sf::VideoMode(window_width, window_height), "Triangle Collision", sf::Style::Titlebar | sf::Style::Close)
+{
+	wasd_shape = make_triangle_shape(wasd_triangle, WASD_COLOR);
+	arrow_shape = make_triangle_shape(arrow_triangle, ARROW_COLOR);
+
+}
+
+void Visualization::run()
+{
+	while (window.isOpen())
+	{
+		// React to user input
+		process_events();
+
+		// Update internal properties
+		if (window.hasFocus())
+			update();
+
+		// Render the window
+		render();
+	}
+}
+
 void Visualization::process_events()
 {
 	sf::Event event;
@@ -21,6 +45,19 @@ void Visualization::update()
 
 	// Update outlines based on collision
 	update_fill_colors();
+}
+
+void Visualization::render()
+{
+	// Clear previous frame
+	window.clear(CLEAR_COLOR);
+
+	// Draw both triangle shapes
+	window.draw(wasd_shape);
+	window.draw(arrow_shape);
+
+	// Display new image
+	window.display();
 }
 
 void Visualization::handle_movement(triangle& triangle, sf::ConvexShape& shape, const std::vector<sf::Keyboard::Key>& controls)
@@ -118,19 +155,6 @@ void Visualization::update_fill_colors()
 	}
 }
 
-void Visualization::render()
-{
-	// Clear previous frame
-	window.clear(CLEAR_COLOR);
-
-	// Draw both triangle shapes
-	window.draw(wasd_shape);
-	window.draw(arrow_shape);
-
-	// Display new image
-	window.display();
-}
-
 sf::ConvexShape Visualization::make_triangle_shape(const triangle& triangle, sf::Color color) const
 {
 	sf::ConvexShape shape;
@@ -141,28 +165,4 @@ sf::ConvexShape Visualization::make_triangle_shape(const triangle& triangle, sf:
 
 	shape.setFillColor(color);
 	return shape;
-}
-
-Visualization::Visualization(int window_width, int window_height)
-	: window(sf::VideoMode(window_width, window_height), "Triangle Collision", sf::Style::Titlebar | sf::Style::Close)
-{
-	wasd_shape = make_triangle_shape(wasd_triangle, WASD_COLOR);
-	arrow_shape = make_triangle_shape(arrow_triangle, ARROW_COLOR);
-
-}
-
-void Visualization::run()
-{
-	while (window.isOpen())
-	{
-		// React to user input
-		process_events();
-
-		// Update internal properties
-		if (window.hasFocus())
-			update();
-
-		// Render the window
-		render();
-	}
 }
