@@ -20,4 +20,4 @@ float dot(const vec2& a, const vec2& b);
 std::pair<float, float> project_verts(const std::array<vec2, 3>& verts, const vec2& axis);
 
 // Uses Separating Axis Theorem to detect triangle-triangle collision.
-bool is_coliding(const triangle& triangle1, const triangle& triangle2);
+bool isColiding(const triangle& triangle1, const triangle& triangle2);

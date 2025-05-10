@@ -21,7 +21,7 @@ std::pair<float, float> project_verts(const std::array<vec2, 3>& verts, const ve
 	return { min, max };
 }
 
-bool is_coliding(const triangle& triangle1, const triangle& triangle2)
+bool isColiding(const triangle& triangle1, const triangle& triangle2)
 {
 	for (const auto& triangle : { triangle1, triangle2 })
 	{
