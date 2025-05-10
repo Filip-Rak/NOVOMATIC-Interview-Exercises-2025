@@ -1,14 +1,9 @@
 # Exercise 1 - CMakeLists.txt
 
-set(EX1_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
-set(TRIE_SRC src/Trie.cpp)
-
 # Main executable
-add_executable(ex1_main main.cpp ${TRIE_SRC})
-target_include_directories(ex1_main PRIVATE ${EX1_INCLUDE_DIR})
+add_executable(ex1_main main.cpp Trie.cpp)
 
 # Test executable
-add_executable(ex1_tests tests/test_trie.cpp ${TRIE_SRC})
-target_include_directories(ex1_tests PRIVATE ${EX1_INCLUDE_DIR})
+add_executable(ex1_tests test_trie.cpp Trie.cpp)
 target_link_libraries(ex1_tests PRIVATE Catch2::Catch2WithMain)
 add_test(NAME Exercise1_TrieTests COMMAND ex1_tests)

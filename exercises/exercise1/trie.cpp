@@ -1,4 +1,4 @@
-#include "Trie.h"
+#include "trie.h"
 
 Trie::Node::Node(bool terminal, const std::string& full_query)
 	: terminal(terminal), full_query(full_query) {}

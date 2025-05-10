@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_IMPLEMENTATION
 #include <catch2/catch_all.hpp>
 
-#include "Trie.h"
+#include "trie.h"
 
 TEST_CASE("Single word insertion & prefix match", "[trie]")
 {

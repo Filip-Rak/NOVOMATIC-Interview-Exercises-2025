@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "Trie.h"
+#include "trie.h"
 
 void handle_input(const std::string& line, Trie& trie)
 {
