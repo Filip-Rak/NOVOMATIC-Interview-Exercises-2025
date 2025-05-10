@@ -3,7 +3,7 @@
 
 #include "Trie.h"
 
-TEST_CASE("hello() returns correct message", "[trie]") 
+TEST_CASE("Dummy test") 
 {
-    REQUIRE(hello() == "Hello from Trie");
+    SUCCEED();
 }

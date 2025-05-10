@@ -6,9 +6,10 @@ project(NOVOMATIC_Interview-Exercises-2025 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/external)	# Keep builds and downloads inside build/
+set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/external)
 
 include(FetchContent)
+
 FetchContent_Declare(
   catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
