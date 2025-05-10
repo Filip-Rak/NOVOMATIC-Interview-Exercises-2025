@@ -10,7 +10,7 @@ std::pair<float, float> project_verts(const std::array<vec2, 3>& verts, const ve
 	float min = dot(verts[0], axis);
 	float max = dot(verts[0], axis);
 
-	for (int i = 1; i < verts.size(); i++)
+	for (std::size_t i = 1; i < verts.size(); i++)
 	{
 		float projection = dot(verts[i], axis);
 
@@ -25,7 +25,7 @@ bool isColiding(const triangle& triangle1, const triangle& triangle2)
 {
 	for (const auto& triangle : { triangle1, triangle2 })
 	{
-		for (int i = 0; i < triangle.points.size(); i++)
+		for (std::size_t i = 0; i < triangle.points.size(); i++)
 		{
 			vec2 vert_a = triangle.points[i];
 			vec2 vert_b = triangle.points[(i + 1) % triangle.points.size()];
