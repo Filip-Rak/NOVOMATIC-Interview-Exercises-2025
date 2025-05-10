@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include <stack>
+#include <vector>
 
 class Trie
 {
