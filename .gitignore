@@ -19,3 +19,11 @@ CMakeSettings.json
 *.dll
 *.lib
 *.pdb
+
+# Ignore all contents of build/bin, but keep the directory
+/build/*
+!/build/.gitkeep
+
+/build/bin/*
+!/build/bin/.gitkeep
+
