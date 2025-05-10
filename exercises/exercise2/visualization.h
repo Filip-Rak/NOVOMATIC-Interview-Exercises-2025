@@ -1,7 +1,7 @@
 #pragma once
 
-#include <unordered_map>
 #include <iostream>
+#include <unordered_map>
 #include <SFML/Graphics.hpp>
 
 #include "triangle.h"
@@ -37,7 +37,7 @@ class Visualization
 	const sf::Color COLLISION_COLOR = sf::Color(231, 76, 60);
 	const sf::Color CLEAR_COLOR = sf::Color::Black;
 
-	// Constnats: Controls
+	// Constants: Controls
 	const std::vector<sf::Keyboard::Key> wasd_controls = {
 		sf::Keyboard::W,		// UP
 		sf::Keyboard::S,		// DOWN

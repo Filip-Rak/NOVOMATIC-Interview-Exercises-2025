@@ -6,6 +6,9 @@ Visualization::Visualization(int window_width, int window_height)
 	wasd_shape = make_triangle_shape(wasd_triangle, WASD_COLOR);
 	arrow_shape = make_triangle_shape(arrow_triangle, ARROW_COLOR);
 
+	std::cout << "Controls:\n";
+	std::cout << "Green Triangle: [WASD] Speed up: [LShift]\n";
+	std::cout << "Blue Triangle: [ARROW KEYS] Speed up: [LCtrl]\n";
 }
 
 void Visualization::run()
