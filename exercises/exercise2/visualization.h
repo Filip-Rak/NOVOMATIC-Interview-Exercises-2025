@@ -61,6 +61,7 @@ class Visualization
 	void handle_movement(triangle& triangle, sf::ConvexShape& shape, const std::vector<sf::Keyboard::Key>& controls);
 	vec2 get_movement_vector(const std::vector<sf::Keyboard::Key> constrols);
 	bool will_fit_on_screen(const triangle& tri, const vec2& offset);
+	void sync_shape_with_triangle(sf::ConvexShape& shape, triangle& tri);
 	void update_fill_colors();
 	void render();
 

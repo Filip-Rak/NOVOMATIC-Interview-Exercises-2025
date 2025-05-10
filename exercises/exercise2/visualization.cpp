@@ -35,7 +35,7 @@ void Visualization::handle_movement(triangle& triangle, sf::ConvexShape& shape, 
 		direction.y * speed * delta_time,
 	};
 
-	if (!will_fit_on_screen(triangle, offset))
+	if (!will_fit_on_screen(triangle, offset)) 
 		return;
 
 	// Apply offset to triangle
@@ -45,11 +45,7 @@ void Visualization::handle_movement(triangle& triangle, sf::ConvexShape& shape, 
 		y += offset.y;
 	}
 
-	// Apply offset to shape
-	for (int i = 0; i < shape.getPointCount(); i++)
-	{
-		shape.setPoint(i, sf::Vector2f(triangle.points[i].x, triangle.points[i].y));
-	}
+	sync_shape_with_triangle(shape, triangle);
 }
 
 vec2 Visualization::get_movement_vector(const std::vector<sf::Keyboard::Key> controls)
@@ -96,13 +92,16 @@ bool Visualization::will_fit_on_screen(const triangle& tri, const vec2& offset)
 	float next_max_y = max_y + offset.y;
 
 	// Check if the future boudning box will stay within the window
-	if (next_min_x < 0.f || next_max_x >(float)window.getSize().x ||
-		next_min_y < 0.f || next_max_y >(float)window.getSize().y)
-	{
-		return false;
-	}
+	return !(next_min_x < 0.f || next_max_x >(float)window.getSize().x ||
+		next_min_y < 0.f || next_max_y >(float)window.getSize().y);
+}
 
-	return true;
+void Visualization::sync_shape_with_triangle(sf::ConvexShape& shape, triangle& tri)
+{
+	for (int i = 0; i < shape.getPointCount(); i++)
+	{
+		shape.setPoint(i, sf::Vector2f(tri.points[i].x, tri.points[i].y));
+	}
 }
 
 void Visualization::update_fill_colors()
