@@ -1,6 +1,7 @@
 #pragma once
 
 #include <unordered_map>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 #include "triangle.h"
@@ -9,8 +10,6 @@ class Visualization
 {
 	/* Attributes */
 	sf::RenderWindow window;
-	const float WINDOW_WIDTH;
-	const float WINDOW_HEIGHT;
 
 	// Triangles & Shapes
 	triangle wasd_triangle = { {{
@@ -36,28 +35,32 @@ class Visualization
 
 	// Key bindings
 	const std::vector<sf::Keyboard::Key> wasd_controls = {
-		sf::Keyboard::W,  // UP
-		sf::Keyboard::S,  // DOWN
-		sf::Keyboard::A,  // LEFT
-		sf::Keyboard::D   // RIGHT
+		sf::Keyboard::W,		// UP
+		sf::Keyboard::S,		// DOWN
+		sf::Keyboard::A,		// LEFT
+		sf::Keyboard::D,		// RIGHT
+		sf::Keyboard::LShift	// SPEED BOOST
 	};	
 	
 	const std::vector<sf::Keyboard::Key> arrow_controls = {
-		sf::Keyboard::Up,	// UP
-		sf::Keyboard::Down,	// DOWN
-		sf::Keyboard::Left,	// LEFT
-		sf::Keyboard::Right	// RIGHT
+		sf::Keyboard::Up,		// UP
+		sf::Keyboard::Down,		// DOWN
+		sf::Keyboard::Left,		// LEFT
+		sf::Keyboard::Right,	// RIGHT
+		sf::Keyboard::LControl	// SPEED BOOST
 	};
 
 	sf::Clock delta_clock;
 	float delta_time = 0.f;
-	float triangle_speed = 100.f;
-	float triangle_fast_speed = 200.f;
+	float triangle_normal_speed = 100.f;
+	float triangle_fast_speed = 250.f;
 
 	/* Private Methods */
 	void process_events();
 	void update();
 	void handle_movement(triangle& triangle, sf::ConvexShape& shape, const std::vector<sf::Keyboard::Key>& controls);
+	vec2 get_movement_vector(const std::vector<sf::Keyboard::Key> constrols);
+	bool will_fit_on_screen(const triangle& tri, const vec2& offset);
 	void update_fill_colors();
 	void render();
 
