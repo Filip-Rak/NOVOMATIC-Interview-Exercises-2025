@@ -12,7 +12,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(SFML)
 
 # Main executable
-add_executable(ex2_main main.cpp triangle.cpp)
+add_executable(ex2_main main.cpp triangle.cpp visualization.cpp)
 target_link_libraries(ex2_main PRIVATE sfml-graphics sfml-window sfml-system)
 
 # Test executable
