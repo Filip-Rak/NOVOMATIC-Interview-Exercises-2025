@@ -6,7 +6,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - [Struktura projektu](#struktura-projektu)
 - [Wymagania](#wymagania)
 - [Budowanie projektu](#budowanie-projektu)
-- [Opis zadań](#opis-zadań)
+- [Opis rozwiązań](#opis-rozwiązań)
 
 ## Struktura projektu
 
@@ -61,7 +61,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - Testy jednostkowe mogą zostać uruchomione poleceniem `ctest`.
 - W razie problemów proszę o kontakt mailowy lub telefoniczny.
 
-## Opis zadań
+## Opis rozwiązań
 ### Zadanie 1 – Wyszukiwarka (szukajka.pl)
 - **Opis**: Moduł sugestii oparty na strukturze Trie, wspierający wyszukiwanie po prefiksie.
 - **Wejście**:
@@ -88,7 +88,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
   - Prędkość ruchu jest skalowana względem czasu trwania poprzedniej klatki (delta).
 
 ### Zadanie 3 – Operacja binarna (calculate)
-- **Opis**: Szablonowa funkcja `calculate(n, value, op)`, która wykonuje operację binarną `n` razy, zaczynając od elementu neutralnego (`identity()`).
+- **Opis**: Wykorzystanie potęgowania binarnego w ramach definicji funkcji `calculate()`.
 - **Wejście**:
   - `n` – liczba powtórzeń.
   - `value` – wartość wejściowa.
@@ -96,5 +96,5 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - **Wyjście**:
   - Wynik `op(...op(identity(), value), value)...` powtórzony `n` razy.
 - **Uwagi**:
-  - Brak interfejsu wejścia/wyjścia — całość testowana jednostkowo.
+  - Brak interfejsu wejścia/wyjścia pliku wykonywalnego — całość testowana jednostkowo.
   - Plik `main.cpp` służy jedynie jako punkt startowy w razie potrzeby testów manualnych.
