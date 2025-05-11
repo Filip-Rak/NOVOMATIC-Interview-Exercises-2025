@@ -1,6 +1,5 @@
 /*	Exercise 1: szukajka.pl's search engine admin
 *	----------------------------------------------
-*	Autor: Filip Rak
 * 
 *	Description:
 *		Implements a simple search engine suggestion module using a Trie,

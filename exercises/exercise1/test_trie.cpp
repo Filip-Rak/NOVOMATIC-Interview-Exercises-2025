@@ -59,3 +59,19 @@ TEST_CASE("get_prefixes matches multiple word queries with shared prefix", "[tri
 			std::vector<std::string>{"Kiedy jest nowy rok w Chinach?", "Kiedy jest nowy rok w Tajlandii?"}
 		));
 }
+
+TEST_CASE("Trie is case insensitive", "[trie]")
+{
+	Trie trie;
+	trie.add_query("caRt");
+	trie.add_query("car");
+	trie.add_query("CArTMAN");
+	trie.add_query("cRab");
+
+	auto result = trie.get_prefixes("cA");
+	REQUIRE_THAT(
+		result,
+		Catch::Matchers::UnorderedEquals(
+			std::vector<std::string>{"caRt", "car", "CArTMAN"}
+		));
+}

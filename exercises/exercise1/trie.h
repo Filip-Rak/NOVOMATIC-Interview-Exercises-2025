@@ -30,4 +30,8 @@ public:
 	/* Public Methods */
 	void add_query(const std::string& query);
 	std::vector<std::string> get_prefixes(const std::string& prefix) const;
+
+	/* Private Methods */
+private:
+	std::string to_lower_case(const std::string& str) const;
 };

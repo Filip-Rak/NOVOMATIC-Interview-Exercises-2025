@@ -10,7 +10,7 @@ void Trie::add_query(const std::string& query)
 {
 	// Process each character while advancing through nodes.
 	Node* tgt = root.get();
-	for (char c : query)
+	for (char c : to_lower_case(query))
 	{
 		// Character is present -> advance. Character not present -> map it to a new node -> advance.
 		auto [it, _] = tgt->children.try_emplace(c, std::make_unique<Node>());
@@ -26,7 +26,7 @@ std::vector<std::string> Trie::get_prefixes(const std::string& prefix) const
 {
 	// Get to the end of the prefix.
 	Node* tgt = root.get();
-	for (char c : prefix)
+	for (char c : to_lower_case(prefix))
 	{
 		auto it = tgt->children.find(c);
 		if (it != tgt->children.end())
@@ -55,4 +55,15 @@ std::vector<std::string> Trie::get_prefixes(const std::string& prefix) const
 	}
 
 	return results;
+}
+
+std::string Trie::to_lower_case(const std::string& str) const
+{
+	std::string output;
+	output.reserve(str.size());
+
+	for (char c : str)
+		output += std::tolower(c);
+
+	return output;
 }
