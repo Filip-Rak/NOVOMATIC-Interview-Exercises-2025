@@ -96,5 +96,5 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - **Wyjście**:
   - Wynik `op(...op(identity(), value), value)...` powtórzony `n` razy.
 - **Uwagi**:
-  - Brak interfejsu wejścia/wyjścia pliku wykonywalnego — całość testowana jednostkowo.
+  - Brak interfejsu wejścia/wyjścia pliku wykonywalnego - całość testowana jednostkowo.
   - Plik `main.cpp` służy jedynie jako punkt startowy w razie potrzeby testów manualnych.
