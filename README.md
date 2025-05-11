@@ -64,8 +64,8 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 ### Zadanie 1 – Wyszukiwarka (szukajka.pl)
 - **Opis**: Moduł sugestii oparty na strukturze Trie, wspierający wyszukiwanie po prefiksie.
 - **Wejście**:
-  - `add: [zapytanie]` – dodaje zapytanie do bazy.
-  - `ask: [prefiks]` – wyszukuje pasujące zapytania.
+  - `add: [zapytanie]` - dodaje zapytanie do bazy.
+  - `ask: [prefiks]` - wyszukuje pasujące zapytania.
 - **Wyjście**:
   - Każdy wynik po `ask` jest wypisywany jako:
     ```
