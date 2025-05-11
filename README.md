@@ -76,7 +76,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
   - Białe znaki po dwukropku są ignorowane.
   - Wyszukiwanie jest **case-insensitive**, ale wyniki zachowują oryginalną wielkość liter.
 
-### Zadanie 2 – Kolizja trójkątów (SAT + SFML)
+### Zadanie 2 – Kolizja trójkątów
 - **Opis**: Detekcja kolizji dwóch trójkątów przy pomocy algorytmu Separating Axis Theorem (SAT) oraz wizualizacja w SFML.
 - **Wejście**: Użytkownik porusza trójkątami:
   - Trójkąt 1: klawisze **WASD** + **Shift** (przyspieszenie).
