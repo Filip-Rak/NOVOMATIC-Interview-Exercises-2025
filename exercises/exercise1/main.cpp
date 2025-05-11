@@ -8,7 +8,9 @@
 *	Input:
 *		- "add: [query]" -> Add the query to trie. 
 *		- "ask: [query]" -> Get all querries matching the prefix.
-*		- whitespaces between the end of the command and the start of the query will be ignored.
+*		- whitespaces between the command and the query are ignored.
+*		- Lookup is *not* case sensitive: uppercase and lowercase characters are treated the same.
+*		- Matching queries are returned in the same case as originally added.
 * 
 *	Output: 
 *		- each [ask query] will be followed by every output mathcing the prefix
