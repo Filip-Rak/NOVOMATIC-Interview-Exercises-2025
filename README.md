@@ -45,3 +45,12 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 │
 └── README.md            # Ten plik
 ```
+
+## Wymagania
+- **CMake** w wersji co najmniej **3.16**
+- Kompilator C++ z pełną obsługą **C++20**
+- Kompilator musi być kompatybilny z systemem **CMake**
+- Połączenie z Internetem przy pierwszym uruchomieniu w celu pobrania zależności (SFML, Catch2)
+
+- W przypadku kompilacji na systemach linux wymagana może być instalacja następujących bibliotek systemowych (SFML):
+  `sudo apt install libx11-dev libxcursor-dev libxrandr-dev libudev-dev libfreetype6-dev libgl1-mesa-dev libopenal-dev libflac-dev libvorbis-dev`
