@@ -62,7 +62,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - W razie problemów proszę o kontakt mailowy lub telefoniczny.
 
 ## Opis rozwiązań
-### Zadanie 1 – Wyszukiwarka (szukajka.pl)
+### Zadanie 1 – szukajka.pl
 - **Opis**: Moduł sugestii oparty na strukturze Trie, wspierający wyszukiwanie po prefiksie.
 - **Wejście**:
   - `add: [zapytanie]` - dodaje zapytanie do bazy.
@@ -87,7 +87,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
   - Ruch ograniczony do granic okna.
   - Prędkość ruchu jest skalowana względem czasu trwania poprzedniej klatki (delta).
 
-### Zadanie 3 – Operacja binarna (calculate)
+### Zadanie 3 – Operacja binarna
 - **Opis**: Wykorzystanie potęgowania binarnego w ramach definicji funkcji `calculate()`.
 - **Wejście**:
   - `n` – liczba powtórzeń.
