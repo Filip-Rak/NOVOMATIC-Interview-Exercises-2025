@@ -59,6 +59,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - Przejdź do katalogu `build` i uruchom polecenia: `cmake .. && cmake --build .`
 - Utworzone pliki wykonywalne będa znajdować się w katalogu: `build/bin`.
 - Testy jednostkowe mogą zostać uruchomione poleceniem `ctest`.
+- W razie problemów proszę o kontakt mailowy lub telefoniczny.
 
 ## Opis zadań
 ### Zadanie 1 – Wyszukiwarka (szukajka.pl)
