@@ -17,7 +17,8 @@
 *		  in format: result: [matching query]
 * 
 *	Notes:
-*     - Implementation is split into trie.h and trie.cpp in this directory.
+*		- Implementation is split into `trie.h` and `trie.cpp` in this directory.
+*		- Trie is tested in `test_trie.cpp` in this directory.	
 */
 
 #include <iostream>
