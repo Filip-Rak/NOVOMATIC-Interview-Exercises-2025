@@ -42,7 +42,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 │       ├── calculate.h         # Implementacja funkcji (header-only)
 │       └── test_calculate.cpp  # Testy funkcji calculate
 │
-└── README.md            # Ten plik
+└── README.md             # Ten plik
 ```
 
 ## Wymagania
