@@ -20,20 +20,21 @@ ValueType calculate(int n, ValueType value, const BinaryOp& f)
 
     ValueType result = ValueType::identity();
 
-    // Succesive powers of value: value^1, value^2, value^3, ...
+    // Successive powers of value: value^1, value^2, value^4, value^8, ...
     ValueType factor = value;   // Start from value^1
 
-    // Binary exponentiation. Decompose n into powers of 2
+    // Binary exponentiation
+    // Process each bit of n from least to most significant
     while (n > 0) 
     {
-        // Current bit is set -> include this power of value in the result. 
+        // Current bit is set -> include this factor in the result
         if (n % 2 == 1)
             result = f(result, factor);
 
-        // Square the factor for next bit
+        // Square the factor
         factor = f(factor, factor);
 
-        // Shift to next bit == divice by 2
+        // Shift to next bit
         n /= 2;
     }
 
