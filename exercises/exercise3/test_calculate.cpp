@@ -1,9 +1,10 @@
 #include <string>
+#include <cmath>
 #include <catch2/catch_all.hpp>
 
 #include "calculate.h"
 
-TEST_CASE("Test 1: Basic Integer Addition", "[calculate]")
+TEST_CASE("Basic Integer Addition", "[calculate]")
 {
 	struct CustomInt
 	{
@@ -17,7 +18,7 @@ TEST_CASE("Test 1: Basic Integer Addition", "[calculate]")
 	REQUIRE(result.val == 8);	// 0 + 2 + 2 + 2 + 2 = 8
 }
 
-TEST_CASE("Test 2: String concatenation", "[calculate]")
+TEST_CASE("String concatenation", "[calculate]")
 {
 	struct CustomString
 	{
@@ -31,7 +32,7 @@ TEST_CASE("Test 2: String concatenation", "[calculate]")
 	REQUIRE(result.str == "HiHiHi");
 }
 
-TEST_CASE("Test 3: Vector Addition", "[calculate]")
+TEST_CASE("Vector Addition", "[calculate]")
 {
 	struct Vec2
 	{
@@ -45,7 +46,7 @@ TEST_CASE("Test 3: Vector Addition", "[calculate]")
 	REQUIRE(result.y == 6.f);
 }
 
-TEST_CASE("Test 4: Zero repetitions", "[calculate]")
+TEST_CASE("Zero repetitions", "[calculate]")
 {
 	struct CustomInt
 	{
@@ -59,7 +60,7 @@ TEST_CASE("Test 4: Zero repetitions", "[calculate]")
 	REQUIRE(result.val == CustomInt::identity().val);
 }
 
-TEST_CASE("Test 5: Logical AND", "[calculate]")
+TEST_CASE("Logical AND", "[calculate]")
 {
 	struct CustomBool
 	{
@@ -71,4 +72,19 @@ TEST_CASE("Test 5: Logical AND", "[calculate]")
 	
 	REQUIRE(calculate(3, CustomBool{ true }, logical_and).val);
 	REQUIRE_FALSE(calculate(3, CustomBool{ false }, logical_and).val);
+}
+
+TEST_CASE("Integer Multiplication", "[calculate]")
+{
+	struct CustomInt
+	{
+		int val;
+		static CustomInt identity() { return { 1 }; }
+	};
+
+	auto multiply = [](const CustomInt& a, const CustomInt& b) { return CustomInt{ a.val * b.val }; };
+
+	REQUIRE(calculate(4, CustomInt{ 2 }, multiply).val == pow(2, 4));
+	REQUIRE(calculate(2, CustomInt{ 4 }, multiply).val == pow(4, 2));
+	REQUIRE(calculate(16, CustomInt{ 2 }, multiply).val == pow(2, 16));
 }
