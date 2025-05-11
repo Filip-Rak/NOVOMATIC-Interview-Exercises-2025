@@ -3,12 +3,14 @@
 Visualization::Visualization(int window_width, int window_height)
 	: window(sf::VideoMode(window_width, window_height), "Triangle Collision", sf::Style::Titlebar | sf::Style::Close)
 {
+	// Initialize shapes
 	wasd_shape = make_triangle_shape(wasd_triangle, WASD_COLOR);
 	arrow_shape = make_triangle_shape(arrow_triangle, ARROW_COLOR);
 
+	// Print controls
 	std::cout << "Controls:\n";
-	std::cout << "Green Triangle: [WASD] Speed up: [LShift]\n";
-	std::cout << "Blue Triangle: [ARROW KEYS] Speed up: [LCtrl]\n";
+	std::cout << "Green Triangle:\n\tMovement: [WASD]\n\tSpeed up: [LShift]\n";
+	std::cout << "Blue Triangle:\n\tMovement: [ARROW KEYS]\n\tSpeed up: [LCtrl]\n";
 }
 
 void Visualization::run()
@@ -33,7 +35,15 @@ void Visualization::process_events()
 	while (window.pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
+		{
 			window.close();
+		}
+
+		if (event.type == sf::Event::Resized)
+		{
+			sf::FloatRect visible_area(0, 0, event.size.width, event.size.height);
+			window.setView(sf::View(visible_area));
+		}
 	}
 }
 

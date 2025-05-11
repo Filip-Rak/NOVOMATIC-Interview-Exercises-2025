@@ -16,7 +16,7 @@
 *   Output:
 *		- Visual window with two interactive triangles.
 *		- Color indicates collision status.
-*		- Control schema.
+*		- Controls.
 *
 *   Notes:
 *		- Triangles cannot leave the window bounds.
