@@ -12,7 +12,7 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 
 ```
 ├── build/                # Pusty katalog dla plików wynikowych CMake
-│   └── bin/              # Pusty katalog na pliki na wygenerowane pliki wykonywalne (main/test)
+│   └── bin/              # Pusty katalog dla wygenerowanych plików wykonywalnych (main/test)
 │
 ├── CMakeLists.txt        # Główny plik konfiguracyjny CMake
 │
@@ -46,18 +46,18 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 ```
 
 ## Wymagania
-- **CMake** w wersji co najmniej **3.16**
-- Kompilator C++ z pełną obsługą **C++20**
-- Kompilator musi być kompatybilny z systemem **CMake**
-- Połączenie z Internetem przy pierwszym uruchomieniu w celu pobrania zależności (SFML, Catch2)
+- **CMake** w wersji co najmniej **3.16**.
+- Kompilator C++ z pełną obsługą **C++20**.
+- Kompilator musi być kompatybilny z systemem **CMake**.
+- Połączenie z Internetem przy pierwszym uruchomieniu w celu pobrania zależności (SFML, Catch2).
 
-- W przypadku kompilacji na systemach linux, wymagana może być instalacja następujących bibliotek systemowych dla SFML:
-  `sudo apt install libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libopenal-dev libudev-dev libflac-dev libvorbis-dev libgl1-mesa-dev libxcursor-dev`
+> W przypadku kompilacji na systemach linux, wymagana może być instalacja następujących bibliotek systemowych dla SFML:
+  `sudo apt install libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libopenal-dev libudev-dev libflac-dev libvorbis-dev libgl1-mesa-dev libxcursor-dev`.
 
 ## Budowanie projektu
 - W repozytorium znajduje się pusty katalog `build`, w którym CMake zbuduje projekt.
 - Przejdź do katalogu `build` i uruchom polecenia: `cmake .. && cmake --build .`
-- Utworzone pliki wykonywalne będa znajdować się w katalogu `build/bin`.
+- Utworzone pliki wykonywalne będa znajdować się w katalogu: `build/bin`.
 - Testy jednostkowe mogą zostać uruchomione poleceniem `ctest`.
 
 ## Opis zadań
