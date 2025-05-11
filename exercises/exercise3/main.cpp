@@ -50,5 +50,9 @@ void run_example()
 // Main function left minimal per spec. See tests for further usage examples.
 int main()
 {
+	// Uncomment the line below to run a manual example (if needed during review).
 	// run_example();
+
+	std::cout << "This executable does not perform any input/output.\n"
+		<< "All functionality is tested via unit tests (see test_calculate.cpp).\n";
 }
