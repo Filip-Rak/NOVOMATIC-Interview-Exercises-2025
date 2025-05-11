@@ -53,4 +53,5 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
 - Połączenie z Internetem przy pierwszym uruchomieniu w celu pobrania zależności (SFML, Catch2)
 
 - W przypadku kompilacji na systemach linux wymagana może być instalacja następujących bibliotek systemowych (SFML):
-  `sudo apt install libx11-dev libxcursor-dev libxrandr-dev libudev-dev libfreetype6-dev libgl1-mesa-dev libopenal-dev libflac-dev libvorbis-dev`
+  `sudo apt install libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libopenal-dev libudev-dev libflac-dev libvorbis-dev libgl1-mesa-dev libxcursor-dev`
+
