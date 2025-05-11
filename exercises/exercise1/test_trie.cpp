@@ -10,12 +10,13 @@ TEST_CASE("Single word insertion & prefix match", "[trie]")
 	REQUIRE(result == std::vector<std::string>{"apple"});
 }
 
-TEST_CASE("Multiple insertions of same prefix", "[trie]")
+TEST_CASE("Multiple insertions", "[trie]")
 {
 	Trie trie;
 	trie.add_query("apple");
 	trie.add_query("app");
 	trie.add_query("application");
+	trie.add_query("people");
 
 	auto result = trie.get_prefixes("app");
 	REQUIRE_THAT(
@@ -51,6 +52,7 @@ TEST_CASE("get_prefixes matches multiple word queries with shared prefix", "[tri
 	Trie trie;
 	trie.add_query("Kiedy jest nowy rok w Chinach?");
 	trie.add_query("Kiedy jest nowy rok w Tajlandii?");
+	trie.add_query("Nowy rok?");
 
 	auto result = trie.get_prefixes("Kiedy jest nowy rok");
 	REQUIRE_THAT(
