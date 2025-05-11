@@ -55,10 +55,12 @@ Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źr
   `sudo apt install libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libopenal-dev libudev-dev libflac-dev libvorbis-dev libgl1-mesa-dev libxcursor-dev`.
 
 ## Budowanie projektu
+Potwierdzono poprawność kompilacji i działania zadań na systemach Windows oraz Ubtuntu, z wykorzystaniem builderów `MSBuild`, `Ninja`, `Make` oraz kompilatorów `MSVC` i `g++`.
+
 - W repozytorium znajduje się pusty katalog `build`, w którym CMake zbuduje projekt.
 - Przejdź do katalogu `build` i uruchom polecenia: `cmake .. && cmake --build .`
 - Utworzone pliki wykonywalne będa znajdować się w katalogu: `build/bin`.
-- Testy jednostkowe mogą zostać uruchomione poleceniem `ctest`.
+- Testy jednostkowe mogą zostać uruchomione poleceniem `ctest`. W przypadku użycia buildera Microsoft'u `ctest -C debug`.
 - W razie problemów proszę o kontakt mailowy lub telefoniczny.
 
 ## Opis rozwiązań
