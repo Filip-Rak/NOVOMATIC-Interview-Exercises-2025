@@ -1,6 +1,7 @@
 #pragma once
 
 #include <concepts>
+#include <exception>
 
 template <class T, class Op>
 concept IsSupported = requires(T first, T second, Op operation)
@@ -11,11 +12,17 @@ concept IsSupported = requires(T first, T second, Op operation)
 
 template <class BinaryOp, class ValueType> 
 	requires IsSupported<ValueType, BinaryOp>
-ValueType calculate(int n, ValueType value, const BinaryOp& f)
+ValueType calculate(int n, ValueType value, const BinaryOp& f) 
 {
-	ValueType result = ValueType::identity();
-	for (int i = 0; i < n; i++)
-		result = f(result, value);
+    if (n < 0) throw std::invalid_argument("n must be non-negative");
+    if (n == 0) return ValueType::identity();
+    if (n == 1) return value;
 
-	return result;
+    ValueType half = calculate(n / 2, value, f);
+    ValueType full = f(half, half);
+
+    if (n % 2 == 0)
+        return full;
+    else
+        return f(full, value);
 }
