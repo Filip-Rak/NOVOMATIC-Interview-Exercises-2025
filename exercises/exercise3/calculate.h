@@ -18,11 +18,24 @@ ValueType calculate(int n, ValueType value, const BinaryOp& f)
     if (n == 0) return ValueType::identity();
     if (n == 1) return value;
 
-    ValueType half = calculate(n / 2, value, f);
-    ValueType full = f(half, half);
+    ValueType result = ValueType::identity();
 
-    if (n % 2 == 0)
-        return full;
-    else
-        return f(full, value);
+    // Succesive powers of value: value^1, value^2, value^3, ...
+    ValueType factor = value;   // Start from value^1
+
+    // Binary exponentiation. Decompose n into powers of 2
+    while (n > 0) 
+    {
+        // Current bit is set -> include this power of value in the result. 
+        if (n % 2 == 1)
+            result = f(result, factor);
+
+        // Square the factor for next bit
+        factor = f(factor, factor);
+
+        // Shift to next bit == divice by 2
+        n /= 2;
+    }
+
+    return result;
 }
