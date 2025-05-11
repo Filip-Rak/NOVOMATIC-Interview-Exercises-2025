@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 
 #include "calculate.h"
 
@@ -14,9 +15,16 @@ auto add_vec2 = [](const Vec2& a, const Vec2& b) {
 void run_example()
 {
 	Vec2 pos = {1.f, 2.f};
-	pos = calculate(3, pos, add_vec2);
 
-	std::cout << pos.x << " " << pos.y << "\n";
+	try
+	{
+		pos = calculate(3, pos, add_vec2);
+		std::cout << pos.x << " " << pos.y << "\n";
+	}
+	catch (std::exception ex)
+	{
+		std::cerr << "Exception: " << ex.what() << "\n";
+	}
 }
 
 // Main function left minimal per spec. See tests for further usage examples.
