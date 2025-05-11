@@ -1,3 +1,23 @@
+/*
+*   Exercise 3: Binary Operation
+*   ----------------------------
+*
+*   Description:
+*     Implements a generic `calculate()` function that applies a binary operation
+*     repeatedly to a value, starting from the identity element.
+*
+*   Purpose:
+*     - This file exists as an optional entry point for manual testing or demonstration.
+*
+*   Structure:
+*     - The function `calculate` is implemented in `calculate.h` (header-only).
+*     - All unit tests are located in `test_calculate.cpp` in the same directory.
+*
+*   Notes:
+*     - This exercise does not take input nor return output.
+*/
+
+
 #include <iostream>
 #include <exception>
 

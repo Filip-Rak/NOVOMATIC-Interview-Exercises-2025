@@ -17,14 +17,16 @@
 *		- Visual window with two interactive triangles.
 *		- Color indicates collision status.
 *		- Controls.
-*
-*   Notes:
-*		- Triangles cannot leave the window bounds.
+*	
+*	Structure:
 *		- Triangle logic is implemented in `triangle.h` and `triangle.cpp`.
-*		- Visualization (SFML) logic is in `visualization.h` and `visualization.cpp`.
-*		- All headers are in the `include/` directory.
+* 		- Visualization (SFML) logic is in `visualization.h` and `visualization.cpp`.
+* 		- All headers are in the `include/` directory.
 *		- All source files are in the `src/` directory.
 *		- Tests are located in the `tests/` directory.
+*
+*   Notes:
+*		- Triangles are blocked from leaving window bounds.
 */
 
 #include <iostream>
@@ -36,5 +38,7 @@ int main()
 {
 	const int widnow_width = 800, window_height = 600;
 	Visualization vis(widnow_width, window_height);
+
+	// Enter main loop
 	vis.run();
 }

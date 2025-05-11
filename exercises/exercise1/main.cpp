@@ -8,17 +8,19 @@
 *	Input:
 *		- "add: [query]" -> Add the query to trie. 
 *		- "ask: [query]" -> Get all querries matching the prefix.
-*		- whitespaces between the command and the query are ignored.
-*		- Lookup is *not* case sensitive: uppercase and lowercase characters are treated the same.
-*		- Matching queries are returned in the same case as originally added.
 * 
 *	Output: 
 *		- each [ask query] will be followed by every output mathcing the prefix
 *		  in format: result: [matching query]
 * 
-*	Notes:
+*	Structure:
 *		- Implementation is split into `trie.h` and `trie.cpp` in this directory.
 *		- Trie is tested in `test_trie.cpp` in this directory.	
+* 
+*	Notes:
+*		- whitespaces between the command and the query are ignored.
+*		- Lookup is *not* case sensitive: uppercase and lowercase characters are treated the same.
+*		- Matching queries are returned in the same case as originally added.
 */
 
 #include <iostream>
