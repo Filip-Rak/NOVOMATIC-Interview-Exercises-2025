@@ -1,4 +1,4 @@
-# Zadania Rekrutacyjne 2025 – Filip Rak
+# Zadania Rekrutacyjne 2025 - Filip Rak
 Repozytorium zawiera rozwiązania zadań rekrutacyjnych wraz z pełnym kodem źródłowym, testami jednostkowymi oraz CMake'iem.
 
 ## Spis treści
