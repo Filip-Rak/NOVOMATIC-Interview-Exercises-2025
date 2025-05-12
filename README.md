@@ -76,7 +76,7 @@ Potwierdzono poprawność kompilacji i działania zadań na systemach Windows or
     ```
 - **Uwagi**:
   - Białe znaki po dwukropku są ignorowane.
-  - Wyszukiwanie jest **case-insensitive**, ale wyniki zachowują oryginalną wielkość liter.
+  - Wyszukiwanie **nie** jest case-sensitive, ale wyniki zachowują oryginalną wielkość liter.
 
 ### Zadanie 2 – Kolizja trójkątów
 - **Opis**: Detekcja kolizji dwóch trójkątów przy pomocy algorytmu Separating Axis Theorem (SAT) oraz wizualizacja w SFML.
